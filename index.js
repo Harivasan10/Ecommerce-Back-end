@@ -27,7 +27,7 @@ const upload = multer({storage: storage})
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `https://ecommerce-back-end-2.onrender.com/${req.file.filename}`
+        image_url: `https://ecommerce-back-end-2.onrender.com/images/${req.file.filename}`
     })
 })
 app.use('/images', express.static('upload/images'));
